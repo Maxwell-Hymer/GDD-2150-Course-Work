@@ -6,18 +6,22 @@ var acceleration = 10;
 if (keyboard_check_pressed(ord("A"))) {
     obj_player._grav_x = -acceleration;
     obj_player._grav_y = 0; // Reset vertical movement
+	image_angle = 270 //rotates sprite to look like the apple is falling in the new direction
 }
 else if (keyboard_check_pressed(ord("D"))) {
     obj_player._grav_x = acceleration;
     obj_player._grav_y = 0; // Reset vertical movement
+	image_angle = 90  //rotates sprite to look like the apple is falling in the new direction
 }
 else if (keyboard_check_pressed(ord("W"))) {
     obj_player._grav_y = -acceleration;
     obj_player._grav_x = 0; // Reset horizontal movement
+	image_angle = 180  //rotates sprite to look like the apple is falling in the new direction
 }
 else if (keyboard_check_pressed(ord("S"))) {
     obj_player._grav_y = acceleration;
     obj_player._grav_x = 0; // Reset horizontal movement
+	image_angle = 0 //rotates sprite to look like the apple is falling in the new direction
 }
 
 // Gradually increase speed in the current direction

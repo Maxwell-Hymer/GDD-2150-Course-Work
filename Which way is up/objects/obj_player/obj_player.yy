@@ -31,8 +31,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_player",
-    "path": "sprites/spr_player/spr_player.yy",
+    "name": "spr_apple",
+    "path": "sprites/spr_apple/spr_apple.yy",
   },
   "spriteMaskId": null,
   "visible": true,
