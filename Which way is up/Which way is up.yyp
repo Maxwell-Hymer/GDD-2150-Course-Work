@@ -34,13 +34,17 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"spr_spike","path":"sprites/spr_spike/spr_spike.yy",},},
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},},
+    {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"scr_gravity","path":"scripts/scr_gravity/scr_gravity.yy",},},
+    {"id":{"name":"spr_checkpointTEMP","path":"sprites/spr_checkpointTEMP/spr_checkpointTEMP.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},},
     {"id":{"name":"obj_grav","path":"objects/obj_grav/obj_grav.yy",},},
     {"id":{"name":"spr_apple","path":"sprites/spr_apple/spr_apple.yy",},},
+    {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
