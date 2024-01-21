@@ -21,7 +21,7 @@ else if (keyboard_check_pressed(ord("W"))) {
 else if (keyboard_check_pressed(ord("S"))) {
     obj_player._grav_y = acceleration;
     obj_player._grav_x = 0; // Reset horizontal movement
-	image_angle = 0 //rotates sprite to look like the apple is falling in the new direction
+	image_angle = 0 //rotates sprite to look like the apple is falling in the new directions
 }
 
 // Gradually increase speed in the current direction
