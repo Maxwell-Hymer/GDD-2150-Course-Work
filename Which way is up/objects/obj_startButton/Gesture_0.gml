@@ -4,3 +4,6 @@
 sprite_index = spr_startButtonSelected
 
 alarm[0] = 1* room_speed;
+
+//idk why but i could only start deathcount here
+global.death = 0;
