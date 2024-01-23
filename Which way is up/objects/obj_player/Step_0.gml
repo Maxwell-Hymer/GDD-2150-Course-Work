@@ -7,21 +7,25 @@ if (keyboard_check_pressed(ord("A"))) {
     obj_player._grav_x = -acceleration;
     obj_player._grav_y = 0; // Reset vertical movement
 	image_angle = 270 //rotates sprite to look like the apple is falling in the new direction
+	audio_play_sound(snd_woosh, 0, false) //play sound
 }
 else if (keyboard_check_pressed(ord("D"))) {
     obj_player._grav_x = acceleration;
     obj_player._grav_y = 0; // Reset vertical movement
 	image_angle = 90  //rotates sprite to look like the apple is falling in the new direction
+	audio_play_sound(snd_woosh, 0, false) //play sound
 }
 else if (keyboard_check_pressed(ord("W"))) {
     obj_player._grav_y = -acceleration;
     obj_player._grav_x = 0; // Reset horizontal movement
 	image_angle = 180  //rotates sprite to look like the apple is falling in the new direction
+	audio_play_sound(snd_woosh, 0, false) //play sound
 }
 else if (keyboard_check_pressed(ord("S"))) {
     obj_player._grav_y = acceleration;
     obj_player._grav_x = 0; // Reset horizontal movement
 	image_angle = 0 //rotates sprite to look like the apple is falling in the new directions
+	audio_play_sound(snd_woosh, 0, false) //play sound
 }
 
 // Gradually increase speed in the current direction
@@ -38,6 +42,10 @@ var next_y = obj_player.y + obj_player._grav_y;
 
 // Collision check with obj_solid
 if (place_meeting(next_x, obj_player.y, obj_solid)) {
+	
+	//play sound 
+	audio_play_sound(snd_thump, 0, false); 
+	
     // Move to the edge of the obj_solid
     while (!place_meeting(obj_player.x + sign(obj_player._grav_x), obj_player.y, obj_solid)) {
         obj_player.x += sign(obj_player._grav_x);
@@ -45,12 +53,17 @@ if (place_meeting(next_x, obj_player.y, obj_solid)) {
     obj_player._grav_x = 0;
 }
 if (place_meeting(obj_player.x, next_y, obj_solid)) {
+	
+	//play sound 
+	audio_play_sound(snd_thump, 0, false);
+	
     // Move to the edge of the obj_solid
     while (!place_meeting(obj_player.x, obj_player.y + sign(obj_player._grav_y), obj_solid)) {
         obj_player.y += sign(obj_player._grav_y);
     }
     obj_player._grav_y = 0;
 }
+
 // Apply gravity to player's position
 obj_player.x += obj_player._grav_x;
 obj_player.y += obj_player._grav_y;

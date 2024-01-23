@@ -1,6 +1,14 @@
+
+//play sound only if check point has not yet been activated 
+if (is_on == 0)
+{
+	audio_play_sound(snd_checkpoint, 0, false);
+}
+
+
 //checks if checkpoint ini file is already saved
 if(is_on == 1)
-{
+{	
 	exit;
 }
 
