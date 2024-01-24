@@ -3,6 +3,8 @@
 if (is_on == 0)
 {
 	audio_play_sound(snd_checkpoint, 0, false);
+	image_speed = 2;
+	
 }
 
 

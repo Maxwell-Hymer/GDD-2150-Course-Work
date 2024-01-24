@@ -67,3 +67,8 @@ if (place_meeting(self.x, next_y, obj_solid)) {
 // Apply gravity to player's position
 self.x +=self._grav_x;
 self.y +=self._grav_y;
+
+if(global.didWin == true)
+{
+	instance_destroy();
+}
