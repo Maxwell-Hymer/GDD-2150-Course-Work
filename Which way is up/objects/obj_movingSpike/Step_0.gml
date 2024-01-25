@@ -42,9 +42,7 @@ var next_y =self.y +self._grav_y;
 
 // Collision check with obj_solid
 if (place_meeting(next_x,self.y, obj_solid)) {
-	
-	//play sound 
-	audio_play_sound(snd_thump, 0, false); 
+
 	
     // Move to the edge of the obj_solid
     while (!place_meeting(self.x + sign(self._grav_x),self.y, obj_solid)) {
@@ -54,8 +52,6 @@ if (place_meeting(next_x,self.y, obj_solid)) {
 }
 if (place_meeting(self.x, next_y, obj_solid)) {
 	
-	//play sound 
-	audio_play_sound(snd_thump, 0, false);
 	
     // Move to the edge of the obj_solid
     while (!place_meeting(self.x,self.y + sign(self._grav_y), obj_solid)) {
