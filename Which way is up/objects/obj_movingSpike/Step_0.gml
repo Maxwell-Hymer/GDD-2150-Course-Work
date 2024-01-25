@@ -40,24 +40,22 @@ if (self._grav_y != 0) {
 var next_x =self.x +self._grav_x;
 var next_y =self.y +self._grav_y;
 
-// Collision check with obj_solid
-if (place_meeting(next_x,self.y, obj_solid)) {
-
-	
-    // Move to the edge of the obj_solid
-    while (!place_meeting(self.x + sign(self._grav_x),self.y, obj_solid)) {
-       self.x += sign(self._grav_x);
+// Collision check with obj_solid or obj_door (horizontal)
+if (place_meeting(next_x, self.y, obj_solid) || place_meeting(next_x, self.y, obj_door)) {
+    // Move to the edge of the obj_solid or obj_door
+    while (!place_meeting(self.x + sign(self._grav_x), self.y, obj_solid) && !place_meeting(self.x + sign(self._grav_x), self.y, obj_door)) {
+        self.x += sign(self._grav_x);
     }
-   self._grav_x = 0;
+    self._grav_x = 0;
 }
-if (place_meeting(self.x, next_y, obj_solid)) {
-	
-	
-    // Move to the edge of the obj_solid
-    while (!place_meeting(self.x,self.y + sign(self._grav_y), obj_solid)) {
-       self.y += sign(self._grav_y);
+
+// Collision check with obj_solid or obj_door (vertical)
+if (place_meeting(self.x, next_y, obj_solid) || place_meeting(self.x, next_y, obj_door)) {
+    // Move to the edge of the obj_solid or obj_door
+    while (!place_meeting(self.x, self.y + sign(self._grav_y), obj_solid) && !place_meeting(self.x, self.y + sign(self._grav_y), obj_door)) {
+        self.y += sign(self._grav_y);
     }
-   self._grav_y = 0;
+    self._grav_y = 0;
 }
 
 // Apply gravity to player's position
