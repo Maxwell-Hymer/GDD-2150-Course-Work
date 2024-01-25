@@ -38,6 +38,7 @@
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"snd_woosh","path":"sounds/snd_woosh/snd_woosh.yy",},},
     {"id":{"name":"death_instr","path":"sprites/death_instr/death_instr.yy",},},
+    {"id":{"name":"spr_careful","path":"sprites/spr_careful/spr_careful.yy",},},
     {"id":{"name":"spr_spike","path":"sprites/spr_spike/spr_spike.yy",},},
     {"id":{"name":"spr_stars","path":"sprites/spr_stars/spr_stars.yy",},},
     {"id":{"name":"obj_winner","path":"objects/obj_winner/obj_winner.yy",},},
