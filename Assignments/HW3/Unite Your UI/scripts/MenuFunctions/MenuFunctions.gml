@@ -3,7 +3,7 @@
 
 function Menu(_x, _y, _options, _description = -1)
 {
-	with (instance_create_depth(_x, _y, -999, obj_menu))
+	with (instance_create_depth(_x, _y, -999, obj_in_game_menu))
 	{
 		options = _options;
 		description = _description;
@@ -21,7 +21,7 @@ function Menu(_x, _y, _options, _description = -1)
 		}
 		width += string_width(hovermarker);
 		
-		heightLine = 17;
+		heightLine = 40;
 		height = heightLine * (optionsCount + !(_options == -1));
 		
 		widthFull = width + margin * 2;

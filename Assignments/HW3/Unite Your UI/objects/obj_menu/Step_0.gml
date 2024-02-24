@@ -1,65 +1,33 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @DnDAction : YoYo Games.Common.Execute_Code
+/// @DnDVersion : 1
+/// @DnDHash : 56391833
+/// @DnDArgument : "code" "/// Control Menu$(13_10)$(13_10)//Item ease in$(13_10)menu_x += (menu_x_target - menu_x) / menu_speed;$(13_10)$(13_10)//controls$(13_10)if (menu_control){$(13_10)	if (keyboard_check_pressed(ord("W"))){$(13_10)		menu_cursor++;$(13_10)		if (menu_cursor >= menu_items) menu_cursor = 0;$(13_10)	}$(13_10)	if (keyboard_check_pressed(ord("S"))){$(13_10)		menu_cursor--;$(13_10)		if (menu_cursor = 0) menu_cursor = menu_items - 1;$(13_10)	}$(13_10)	if (keyboard_check_pressed(vk_enter)){$(13_10)		menu_x_target = gui_width+200;$(13_10)		menu_committed = menu_cursor;$(13_10)		menu_control = false;$(13_10)	}$(13_10)}$(13_10)$(13_10)if (menu_x > gui_width+150) && (menu_committed != -1){$(13_10)	switch (menu_committed){$(13_10)		case 2: default: room_goto(Level1); break;$(13_10)		case 1: room_goto(Instructions); break;$(13_10)		case 0: game_end(); break;$(13_10)	}$(13_10)}$(13_10)"
+/// Control Menu
 
-mouseOver = false;
+//Item ease in
+menu_x += (menu_x_target - menu_x) / menu_speed;
 
-if(point_in_rectangle(mouse_x, mouse_y, x, y, x+width, y+height))
-{
-	mouseOver = true;
-	if(mxPrev != mouse_x) || (myPrev != mouse_y)
-	{
-		var _mouseHoverLine = (mouse_y - y) div heightLine;
-		if !(description == -1) _mouseHoverLine -=1;
-		if (_mouseHoverLine > optionsCount-1) _mouseHoverLine = optionsCount -1;
-		hover = _mouseHoverLine;
+//controls
+if (menu_control){
+	if (keyboard_check_pressed(ord("W"))){
+		menu_cursor++;
+		if (menu_cursor >= menu_items) menu_cursor = 0;
+	}
+	if (keyboard_check_pressed(ord("S"))){
+		menu_cursor--;
+		if (menu_cursor = 0) menu_cursor = menu_items - 1;
+	}
+	if (keyboard_check_pressed(vk_enter)){
+		menu_x_target = gui_width+200;
+		menu_committed = menu_cursor;
+		menu_control = false;
 	}
 }
 
-hover += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
-
-if(hover > optionsCount -1) hover = 0;
-if (hover < 0) hover = optionsCount-1;
-
-if  ((mouse_check_button_pressed(mb_left) && mouseOver) || keyboard_check_pressed(vk_enter))
-{
-	if(array_length(options[hover])== 2)
-	{
-		var _func = options[hover][1];
-		if (_func != -1) _func();
+if (menu_x > gui_width+150) && (menu_committed != -1){
+	switch (menu_committed){
+		case 2: default: room_goto(Level1); break;
+		case 1: room_goto(Instructions); break;
+		case 0: game_end(); break;
 	}
-	instance_destroy();
 }
-
-mxPrev = mouse_x;
-myPrev = mouse_y;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
